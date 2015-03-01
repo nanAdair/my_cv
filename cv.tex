@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper]{moderncv}
+
+\usepackage{fontspec,xunicode,xltxtra}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\setmainfont[Numbers=OldStyle,Mapping=tex-text]{Times New Roman}
+\setsansfont[Mapping=tex-text]{Arial}
+\setmonofont{Courier New}
+
+\usepackage[BoldFont,SlantFont,CJKchecksingle,CJKnumber]{xeCJK}
+%\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+%\setCJKsansfont{Adobe Heiti Std}
+%\setCJKmonofont{Adobe Fangsong Std}
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+\punctstyle{hangmobanjiao}
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\usepackage{xcolor}
+\linespread{1.2}
+
+\moderncvtheme[blue]{classic}
+
+\usepackage[scale=0.95]{geometry}
+\AtBeginDocument{\recomputelengths}
+
+\setCJKfamilyfont{name}{KaiTi}
+\newcommand\name{\CJKfamily{name}}
+
+\firstname{\name{王秉楠}}
+\familyname{}
+\title{个人简历}
+\address{广州市番禺区大学城中山大学东校区至善园8号}{邮编：510006}
+\mobile{18503726472}
+\email{wangbn15@gmail.com}
+\homepage{wwinston.me}
+\github{github.com/nanAdair}
+\quote{\textit{求职意向：C++开发工程师}}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+%\section{基本信息}
+%\cvcomputer{姓\qquad 名：}{张三}{性\qquad 别：}{男}
+%\cvcomputer{民\qquad 族：}{汉族}{出\qquad 生：}{xxxx年xx月xx日}
+
+\section{教育背景}
+\cventry{2013年 -- 至今}{硕士}{中山大学}{计算机科学与技术专业}{广东省信息安全重点实验室}{}
+\cventry{2009年 -- 2013年}{本科}{中山大学}{网络工程专业}{成绩在本专业排名前5\%(GPA:3.8/5)}{}
+
+\section{项目经验}
+%\cvline{年 -- 年}{简要描述}
+%\cvline{}{$\bullet$ 详细描述子课题}
+%\cvline{}{$\bullet$ 详细描述子课题}
+\cvline{2014.10 -- 至今}{Tunnel目标代码混淆器}
+\cvline{}{$\bullet$ Tunnel是在Scarab的框架中对目标代码进行混淆操作。它利用了ROP的攻击思想，在程序中插入栈内容构造的指令，通过栈指针来控制程序的执行，并改变原先指令的分布，从而将控制流隐藏。由于反汇编算法（逆向攻击的基础）只能按照固定的算法来进行反汇编操作，Tunnel的混淆使得反汇编算法错误地对二进制代码进行反汇编，从而破坏了逆向攻击。项目目前完成整体架构设计，仍在进行中。}
+\cvline{2014.2 -- 2014.5}{Scarab目标代码混淆框架}
+\cvline{}{$\bullet$ 为了代码混淆方法能够更加灵活，独立地进行混淆操作而提出的混淆框架。Scarab本质上是一个增强型链接器。它对输入的目标代码文件进行处理，获取该程序的段，符号，重定位等信息，并通过对目标文件进行反汇编操作创建程序的指令流以及控制流图，封装并定义混淆操作的API接口。在混淆操作完成后，Scarab继续重组二进制指令并进行后续的Patch操作，使得最终生成一个功能依旧的可执行程序。}
+\cvline{}{$\bullet$ 职责：项目负责人，项目架构设计，链接器大部分代码实现}
+\cvline{}{$\bullet$ 核心技术：C++，ASM，valgrind，GDB}
+\cvline{2013.2 -- 2013.5}{基于TPM的Linux可信启动的设计与实现}
+\cvline{}{$\bullet$ 在Grub启动器中添加完整性度量流程，实现在当前阶段对下一段的启动文件进行度量和检测。并在度量失败时将系统引导到一个可信的内核环境中去，增强系统的可用性。}
+\cvline{}{$\bullet$ 职责：个人独立开发，修改Grub并实现一个小型的启动加载器}
+\cvline{}{$\bullet$ 核心技术：C，可信计算}
+\cvline{2012.4 -- 2012.8}{基于完整性度量的进程监控器}
+\cvline{}{$\bullet$ Linux环境下的进程静态完整性度量的实现。利用内核中的IMA模块和Fnotify模块，在可执行文件加载到内存前首先对其完整性进行度量，使得被恶意篡改的程序无法再执行。}
+\cvline{}{$\bullet$ 职责：内核模块源码研究，理论学习，文档编写}
+\cvline{}{$\bullet$ 核心技术：C，Linux内核，可信计算}
+
+\section{专业技能}
+\cvline{熟练的:}{C,C++,Python,ASM  Vim,Markdown,Git  Make,GDB  可信计算,逆向,密码学}
+%\cvline{}{$\bullet$ 次要技能}
+%\smallskip
+\cvline{了解的:}{HTML,CSS,JS,Shell  SublimeText,LaTex Django  Web开发,Linux内核,机器学习}
+%\cvline{}{$\bullet$ 等级考试}
+
+\section{获奖情况}
+\cvlistitem[$\bullet$]{2012年全国电子设计大赛信息安全邀请赛国家三等奖}
+\cvlistitem[$\bullet$]{2010-2011学年国家励志奖学金}
+\cvlistitem[$\bullet$]{大一，大二校二等奖学金，大三校三等奖学金}
+
+%\section{个人爱好}
+%\cvlistitem[$\bullet$]{主要爱好}
+%\cvlistitem[$\bullet$]{次要爱好}
+
+%\section{自我评价}
+%\cvline{学习}{简要说明}
+%\cvline{工作}{简要说明}
+%\cvline{生活}{简要说明}
+
+\begin{thebibliography}{99}
+    \bibitem{1}Cai Qiwang, Cai guoyang, \textbf{Wang Bingnan} (2014). \textit{Construction of Trusted Chain of Secure Computing on Trusted USBKey}, WCEE 2015.
+%\bibitem{2}\textbf{Zhang San}, Li Si, Wang Wu. (Year). Title. \textit{Journal}, \ldots.
+\end{thebibliography}
+
+\end{document}
+
