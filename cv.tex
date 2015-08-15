@@ -11,9 +11,12 @@
 %\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
 %\setCJKsansfont{Adobe Heiti Std}
 %\setCJKmonofont{Adobe Fangsong Std}
-\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
+%\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+%\setCJKsansfont{SimHei}
+%\setCJKmonofont{FangSong}
+\setCJKmainfont[BoldFont={STHeiti},ItalicFont={STKaiti}]{STSong}
+\setCJKsansfont{STHeiti}
+\setCJKmonofont{STFangsong}
 \punctstyle{hangmobanjiao}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
@@ -27,18 +30,17 @@
 \usepackage[scale=0.95]{geometry}
 \AtBeginDocument{\recomputelengths}
 
-\setCJKfamilyfont{name}{KaiTi}
+\setCJKfamilyfont{name}{STKaiti}
 \newcommand\name{\CJKfamily{name}}
 
 \firstname{\name{王秉楠}}
 \familyname{}
-\title{个人简历}
+%\title{个人简历}
 \address{广州市番禺区大学城中山大学东校区至善园8号}{邮编：510006}
 \mobile{18503726472}
 \email{wangbn15@gmail.com}
-\homepage{wwinston.me}
+%\homepage{wwinston.me}
 \github{github.com/nanAdair}
-\quote{\textit{求职意向：C++开发工程师}}
 
 %----------------------------------------------------------------------------------
 %            content
@@ -50,9 +52,12 @@
 %\cvcomputer{姓\qquad 名：}{张三}{性\qquad 别：}{男}
 %\cvcomputer{民\qquad 族：}{汉族}{出\qquad 生：}{xxxx年xx月xx日}
 
-\section{教育背景}
-\cventry{2013年 -- 至今}{硕士}{中山大学}{计算机科学与技术专业}{广东省信息安全重点实验室}{}
-\cventry{2009年 -- 2013年}{本科}{中山大学}{网络工程专业}{成绩在本专业排名前5\%(GPA:3.8/5)}{}
+\section{实习经历}
+\cvline{2015.5 -- 2015.7}{阿里云开放结构化数据服务团队(OTS)}
+\cvline{}{$\bullet$ 设计与实现OTS Console(类似Hbase Shell的工具)，提供给阿里内部用户，使其能更方便，快速地使用OTS服务。项目使用Java实现，上线一个月中用户使用情况良好。}
+\cvline{}{$\bullet$ 设计与实现OTS Worker Request View，收集OTS存储模块在处理读请求时的数据流动，如查询的数据单元数，IO数等性能敏感数据，并实现命令供运维与开发人员实时监控。项目使用C++实现，已上线。}
+\cvline{2015.7 -- 至今}{网易游戏平台服务部}
+\cvline{}{$\bullet$ 参与Houston(内测应用分发平台)的开发，负责App后端接口开发，Web后端功能开发。项目使用Python实现。}
 
 \section{项目经验}
 %\cvline{年 -- 年}{简要描述}
@@ -63,21 +68,25 @@
 \cvline{2014.2 -- 2014.5}{Scarab目标代码混淆框架}
 \cvline{}{$\bullet$ 为了代码混淆方法能够更加灵活，独立地进行混淆操作而提出的混淆框架。Scarab本质上是一个增强型链接器。它对输入的目标代码文件进行处理，获取该程序的段，符号，重定位等信息，并通过对目标文件进行反汇编操作创建程序的指令流以及控制流图，封装并定义混淆操作的API接口。在混淆操作完成后，Scarab继续重组二进制指令并进行后续的Patch操作，使得最终生成一个功能依旧的可执行程序。}
 \cvline{}{$\bullet$ 职责：项目负责人，项目架构设计，链接器大部分代码实现}
-\cvline{}{$\bullet$ 核心技术：C++，ASM，valgrind，GDB}
+%\cvline{}{$\bullet$ 核心技术：C++，ASM，valgrind，GDB}
 \cvline{2013.2 -- 2013.5}{基于TPM的Linux可信启动的设计与实现}
 \cvline{}{$\bullet$ 在Grub启动器中添加完整性度量流程，实现在当前阶段对下一段的启动文件进行度量和检测。并在度量失败时将系统引导到一个可信的内核环境中去，增强系统的可用性。}
 \cvline{}{$\bullet$ 职责：个人独立开发，修改Grub并实现一个小型的启动加载器}
-\cvline{}{$\bullet$ 核心技术：C，可信计算}
-\cvline{2012.4 -- 2012.8}{基于完整性度量的进程监控器}
-\cvline{}{$\bullet$ Linux环境下的进程静态完整性度量的实现。利用内核中的IMA模块和Fnotify模块，在可执行文件加载到内存前首先对其完整性进行度量，使得被恶意篡改的程序无法再执行。}
-\cvline{}{$\bullet$ 职责：内核模块源码研究，理论学习，文档编写}
-\cvline{}{$\bullet$ 核心技术：C，Linux内核，可信计算}
+%\cvline{}{$\bullet$ 核心技术：C，可信计算}
+%\cvline{2012.4 -- 2012.8}{基于完整性度量的进程监控器}
+%\cvline{}{$\bullet$ Linux环境下的进程静态完整性度量的实现。利用内核中的IMA模块和Fnotify模块，在可执行文件加载到内存前首先对其完整性进行度量，使得被恶意篡改的程序无法再执行。}
+%\cvline{}{$\bullet$ 职责：内核模块源码研究，理论学习，文档编写}
+%\cvline{}{$\bullet$ 核心技术：C，Linux内核，可信计算}
+
+\section{教育背景}
+\cventry{2013年 -- 至今}{硕士}{中山大学}{计算机科学与技术专业}{广东省信息安全重点实验室}{}
+\cventry{2009年 -- 2013年}{本科}{中山大学}{网络工程专业}{成绩在本专业排名前5\%(GPA:3.8/5)}{}
 
 \section{专业技能}
 \cvline{熟练的:}{C,C++,Python,ASM  Vim,Markdown,Git  Make,GDB  可信计算,逆向,密码学}
 %\cvline{}{$\bullet$ 次要技能}
 %\smallskip
-\cvline{了解的:}{HTML,CSS,JS,Shell  SublimeText,LaTex Django  Web开发,Linux内核,机器学习}
+\cvline{了解的:}{HTML,CSS,JS,Shell,Java  SublimeText,LaTex MySQL,Django  Web开发,Linux内核,机器学习}
 %\cvline{}{$\bullet$ 等级考试}
 
 \section{获奖情况}
@@ -94,10 +103,9 @@
 %\cvline{工作}{简要说明}
 %\cvline{生活}{简要说明}
 
-\begin{thebibliography}{99}
-    \bibitem{1}Cai Qiwang, Cai guoyang, \textbf{Wang Bingnan} (2014). \textit{Construction of Trusted Chain of Secure Computing on Trusted USBKey}, WCEE 2015.
-%\bibitem{2}\textbf{Zhang San}, Li Si, Wang Wu. (Year). Title. \textit{Journal}, \ldots.
-\end{thebibliography}
+%\begin{thebibliography}{99}
+    %\bibitem{1}Cai Qiwang, Cai guoyang, \textbf{Wang Bingnan} (2014). \textit{Construction of Trusted Chain of Secure Computing on Trusted USBKey}, WCEE 2015.
+%\end{thebibliography}
 
 \end{document}
 
